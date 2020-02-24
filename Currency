@@ -1,0 +1,394 @@
+/* 
+ * This program converts different currencies
+ * User of this program is asked for input.
+ * Depending on choice, user can receive converted currency.
+ * There are 20 options
+ * Currency information is taken from: xe.com
+ * If user chooses option that is not on the list, default option is shown and 
+ * user have to run program once again.
+ */
+package different_currencies;
+// import Scanner to read user's choice
+import java.util.Scanner;
+/**
+ *
+ * @author lucjad
+ * Date: 02/24/2020
+ */
+public class Currency {
+
+    /**
+     * @param args the command line arguments
+     * This method introduces all doubles and one int needed
+     * to get user's choice and then perform calculations.
+     */
+    public static void main(String[] args) {
+        // create main method
+        
+        // choice - the number user chooses 
+        int choice;
+        double DollarAndEuro;
+        double DollarAndBritishP;
+        double DollarAndIndianRupee;
+        double DollarAndAustralianDollar;
+        double DollarAndCanadianDollar;
+        double DollarAndChineseYuanRenminbi;
+        double DollarAndMexicanPeso;
+        double DollarAndEmiratiDirham;
+        double DollarAndJapaneseYen;
+        double NewZelandDollarAndPolishZloty;
+        double EuroAndUsDollar;
+        double BritishPoundAndUsDollar;
+        double IndianRupeeAndUsDollar;
+        double AustralianDollarAndUsDollar;
+        double CanadianDollarAndUsDollar;
+        double ChineseYuanRenminbiAndUsDollar;
+        double MexicanPesoAndUsDollar;
+        double EmiratiDirhamAndUsDollar;
+        double JapaneseYenAndUsDollar;
+        double PolishZlotyAndNewZelandDollar;
+        //amount is amount of money user wants to convert 
+        double amount;
+        // result shows the amount of money in one currency 
+        // converted to another currency
+        double result;
+       
+        
+        // introduction for user of the program
+        System.out.print("Hello, welcome to the Currency Converter.\n");
+        System.out.print("Here, you can check US Dollar conversion to\n");
+        System.out.print("another currency,also from other currency\n");
+        System.out.println("to US Dollar.");
+        System.out.println();
+        //show options that user can choose
+        System.out.println("*******************************************");
+        System.out.println();
+        System.out.println("These are the options you can choose.");
+        System.out.print("1.US Dollar to Euro.\n");
+        System.out.print("2.US Dollar to British Pound.\n");
+        System.out.print("3.US Dollar to Indian Rupee.\n");
+        System.out.print("4. US Dollar to Australian Dollar.\n");
+        System.out.print("5. US Dollar to Canadian Dollar.\n");
+        System.out.print("6. US Dollar to Chinese Yuan Renminbi.\n");
+        System.out.print("7. US Dollar to Mexican Peso.\n");
+        System.out.print("8. US Dollar to Emirati Dirham.\n");
+        System.out.print("9. US Dollar to Japanese Yen.\n");
+        System.out.print("10. New Zeland Dollar to Polish Zloty.\n");
+        System.out.print("11. Euro to US Dollar.\n");
+        System.out.print("12. British Pound to US Dollar.\n");
+        System.out.print("13. Indian Rupee to US Dollar.\n");
+        System.out.print("14. Australian Dollar to US Dollar.\n");
+        System.out.print("15. Canadian Dollar to US Dollar.\n");
+        System.out.print("16. Chinese Yuan Renminbi to US Dollar.\n");
+        System.out.print("17. Mexican Peso to US Dollar.\n");
+        System.out.print("18. Emirati Dirham to US Dollar.\n");
+        System.out.print("19. Japanese Yen to US Dollar.\n");
+        System.out.println("20. Polish Zloty to New Zeland Dollar.");
+        
+        System.out.println();
+        
+        // create scanner 
+        Scanner keyboard = new Scanner(System.in);
+        System.out.println("Please select the number from the list above");
+        choice = keyboard.nextInt();
+        System.out.println("You selected:" + choice);
+
+        
+        switch(choice) {
+            case 1:
+                DollarAndEuro = DollarToEuro();
+                System.out.println("US Dollar equals:" + " " + DollarAndEuro +" "+ "Euro");
+                System.out.println("How much US Dollars you want to change for Euro?");
+                amount = keyboard.nextDouble();
+                result = amount * 0.923528;
+                System.out.println(amount + " US dollars is" + " " + result + " Euros");
+                break;
+            case 2:
+                DollarAndBritishP = DollarToBritishP();
+                System.out.println("US Dollar equals:" + " " + DollarAndBritishP + " " + "British Pounds");
+                System.out.println("How much US Dollars you want to change for British Pounds?");
+                amount = keyboard.nextDouble();
+                result = amount * 0.771591;
+                System.out.println(amount + " US Dollars is" + " " + result + " Euros");
+                break;
+            case 3:
+                DollarAndIndianRupee = DollarToIndianR();
+                System.out.println("US Dollar equals:" + " " + DollarAndIndianRupee + " " + "Indian Rupee");
+                System.out.println("How much US Dollars you want to change for Indian Rupees?");
+                amount = keyboard.nextDouble();
+                result = amount * 71.8731;
+                System.out.println(amount + " US Dollars is" + " " + result + " Indian Rupees");
+                break; 
+            case 4:
+                DollarAndAustralianDollar = DollarToAustralianD();
+                System.out.println("US Dollar equals:" + " " + DollarAndAustralianDollar + " " + "Australian Dollar");
+                System.out.println("How much US Dollars you want to change for Australian Dollars?");
+                amount = keyboard.nextDouble();
+                result = amount * 1.51395;
+                System.out.println(amount + " US Dollars is" + " " + result + " Australian Dollars");
+                break;
+            case 5:
+                DollarAndCanadianDollar = DollarToCanadianD();
+                System.out.println("US Dollar equals:" + " " + DollarAndCanadianDollar + " " + "Candian Dollar");
+                System.out.println("How much US Dollars you want to change for Canadian Dollars?");
+                amount = keyboard.nextDouble();
+                result = amount * 1.32424;
+                System.out.println(amount + " US Dollars is" + " " + result + " Canadian Dollars");
+                break;
+            case 6:
+                DollarAndChineseYuanRenminbi = DollarToChineseYuanR();
+                System.out.println("US Dollar equals:" + " " + DollarAndChineseYuanRenminbi + " " + " Chinese Yuan Renminbi");
+                System.out.println("How much US Dollars you want to change for Chinese Yuan Renminbis?");
+                amount = keyboard.nextDouble();
+                result = amount * 7.02591;
+                System.out.println(amount + " US Dollars is" + " " + result + " Chinese Yuan Renminbis");
+                break;
+            case 7:
+                DollarAndMexicanPeso = DollarToMexicanP();
+                System.out.println("US Dollar equals:" + " " + DollarAndMexicanPeso + " " + " Mexican Peso");
+                System.out.println("How much US DOllars you want to change for Mexican Pesos?");
+                amount = keyboard.nextDouble();
+                result = amount * 18.9174;
+                System.out.println(amount + " US Dollars is" + " " + result + " Mexican Pesos");
+                break;
+            case 8:
+                DollarAndEmiratiDirham = DollarToEmiratiD();
+                System.out.println("US Dollar equals:" + " " + DollarAndEmiratiDirham + " " + " Emirati Dirham");
+                System.out.println("How much US Dollars you want to change for Emirati Dirhams?");
+                amount = keyboard.nextDouble();
+                result = amount * 3.67250;
+                System.out.println(amount + " US Dollars is" + " " + result + " Emirati Dirhams");
+                break;
+            case 9:
+                DollarAndJapaneseYen = DollarToJapaneseY();
+                System.out.println("US Dollar equals:" + " " + DollarAndJapaneseYen + " " + " Japanese Yen");
+                System.out.println("How much US DOllars you want to change for Japanese Yens?");
+                amount = keyboard.nextDouble();
+                result = amount * 111.506;
+                System.out.println(amount + " US Dollars is" + " " + result + " Japanese Yens");
+                break;
+            case 10: 
+                NewZelandDollarAndPolishZloty = NewZelandDToPolishZl();
+                System.out.println("New Zeland Dollar equals:" + " " + NewZelandDollarAndPolishZloty + " " + " Polish Zloty");
+                System.out.println("How much New Zeland Dollars you want to change for Polish Zlotys?");
+                amount = keyboard.nextDouble();
+                result = amount *  2.50900;
+                System.out.println( amount + " New Zeland Dollars is" + " " + result + " Polish Zlotys");
+                break;
+            case 11:
+                EuroAndUsDollar = EuroToUsD();
+                System.out.println("Euro equals:" + " " + EuroAndUsDollar + " " + " US Dollar");
+                System.out.println("How much Euros you want to change for US Dollars?");
+                amount = keyboard.nextDouble();
+                result = amount * 1.08345;
+                System.out.println(amount + " Euros is" + " " + result + " US Dollars");
+                break;
+            case 12:
+                BritishPoundAndUsDollar = BritishPToUsD();
+                System.out.println("British Pound equals:" + " " + BritishPoundAndUsDollar + " " + " US Dollar");
+                System.out.println("How much British Pounds you want to change for US Dollars?");
+                amount = keyboard.nextDouble();
+                result = amount * 1.29597;
+                System.out.println(amount + " British Pounds is" + " " + result + " US Dollars");
+                break;
+            case 13:
+                IndianRupeeAndUsDollar = IndianRToUsD();
+                System.out.println("Indian Rupee equals:" + " " + IndianRupeeAndUsDollar + " " + " US Dollar");
+                System.out.println("How much Indian Rupees you want to change for US Dollars?");
+                amount = keyboard.nextDouble();
+                result = amount * 0.0139134;
+                System.out.println(amount + " Indian Rupees is" + " " + result + " US Dollars");
+                break;
+            case 14: 
+                AustralianDollarAndUsDollar = AustralianDToUsD();
+                System.out.println("Australian Dollar equals:" + " " + AustralianDollarAndUsDollar + " US Dollar");
+                System.out.println("How much Australian Dollars you want to change for US Dollars?");
+                amount = keyboard.nextDouble();
+                result = amount * 0.661578;
+                System.out.println(amount + " Australian Dollars is" + " " + result + " US Dollars");
+                break;
+            case 15:
+                CanadianDollarAndUsDollar = CanadianDToUsD();
+                System.out.println("Canadian Dollar equals:" + " " + CanadianDollarAndUsDollar + " US Dollar");
+                System.out.println("How much Canadian Dollars you wwant to change for US Dollars?");
+                amount = keyboard.nextDouble();
+                result = amount * 0.754442;
+                System.out.println(amount + " Canadian Dollars is" + " " + result + " US Dollars");
+                break;
+            case 16:
+                ChineseYuanRenminbiAndUsDollar = ChineseYuanRToUsDollar();
+                System.out.println("Chinese Yuan Renminbi equals:" + " " + ChineseYuanRenminbiAndUsDollar + " US Dollar");
+                System.out.println("How much Chinese Yuan Renminbis you want to change for US Dollars?");
+                amount = keyboard.nextDouble();
+                result = amount * 0.142313;
+                System.out.println(amount + " Chinese Yuan Renminbis is" + " " + result + " US Dollars");
+                break;
+            case 17:
+                MexicanPesoAndUsDollar = MexicanPToUsD();
+                System.out.println("Mexican Peso equals:" + " " + MexicanPesoAndUsDollar + " US Dollar");
+                System.out.println("How much Mexican Pesos you want to change for US Dollars?");
+                amount = keyboard.nextDouble();
+                result = amount * 0.0525081;
+                System.out.println(amount + " Mexican Pesos is" + " " + result + " US Dollars");
+                break;
+            case 18: 
+                EmiratiDirhamAndUsDollar = EmiratiDToUsD();
+                System.out.println("Emirati Dirham equals:" + " " + EmiratiDirhamAndUsDollar + " US Dollar");
+                System.out.println("How much Emirati Dirhams you wan to change for US Dollars?");
+                amount = keyboard.nextDouble();
+                result = amount * 0.272294;
+                System.out.println(amount + " Emirati Dirhams is" + " " + result + " US Dollars");
+                break;
+                
+            case 19:
+                JapaneseYenAndUsDollar = JapaneseYToUsD();
+                System.out.println("Japanese Yen equals:" + " " + JapaneseYenAndUsDollar + " US Dollar");
+                System.out.println("How much Japanese Yens you want to change for US Dollars?");
+                amount = keyboard.nextDouble();
+                result = amount * 0.00896095;
+                System.out.println(amount + " Japanese Yens is" + " " + result + " US Dollars");
+                break;
+            case 20:
+                PolishZlotyAndNewZelandDollar = PolishZToNewZelandD();
+                System.out.println("Polish Zloty equals:" + " " + PolishZlotyAndNewZelandDollar + " US Dollar");
+                System.out.println("How much Polish Zlotys you want to change for New Zeland Dollars?");
+                amount = keyboard.nextDouble();
+                result = amount * 0.398952;
+                System.out.println(amount + " Polish Zlotys is" + " " + result + " New Zeland Dollars");
+                break;
+
+            default :
+                System.out.println("You chose the number that is not on the list. Run the program again.");
+               
+        } // close switch 
+   
+    } // close main method
+    
+    public static double DollarToEuro(){
+        // dollar means US Dollar in all methods 
+        double dollar = 1.0;
+        double euro = 0.923528;
+        // converted shows the value of first double converted to another double
+        double converted = dollar * euro;
+        // return value
+        return converted;
+        
+    } // close method
+    
+    public static double DollarToBritishP(){
+        double dollar = 1.0;
+        double britishpound = 0.771591;
+        double converted = dollar * britishpound;
+        return converted;
+    } // close method
+    
+    public static double DollarToIndianR(){
+        double dollar = 1.0;
+        double indianrupee = 71.8731;
+        double converted = dollar * indianrupee;
+        return converted;
+    } // close method
+    
+    public static double DollarToAustralianD(){
+        double dollar = 1.0;
+        double australiandollar = 1.51395;
+        double converted = dollar * australiandollar;
+        return converted;
+    } // close method 
+    public static double DollarToCanadianD(){
+         double dollar = 1.0;
+         double canadiandollar = 1.32424;
+         double converted = dollar * canadiandollar;
+         return converted;
+    } // close method
+    public static double DollarToChineseYuanR(){
+        double dollar = 1.0;
+        double chineseyuanrenminbi = 7.02591;
+        double converted = dollar * chineseyuanrenminbi;
+        return converted;
+    } // close method 
+    public static double DollarToMexicanP(){
+        double dollar = 1.0;
+        double mexicanpeso = 18.9174;
+        double converted = dollar * mexicanpeso;
+        return converted; 
+    } // close method
+    public static double DollarToEmiratiD(){
+        double dollar = 1.0;
+        double emiratidirham = 3.67250;
+        double converted = dollar * emiratidirham;
+        return converted;
+    } // close method
+    public static double DollarToJapaneseY(){
+        double dollar = 1.0;
+        double japaneseyen = 111.506;
+        double converted = dollar * japaneseyen;
+        return converted;
+    } // close method
+    public static double NewZelandDToPolishZl(){
+        double newzeland = 1.0;
+        double polishzloty =  2.50900;
+        double converted = newzeland * polishzloty;
+        return converted;
+    } // close method
+    public static double EuroToUsD(){
+        double dollar = 1.08345;
+        double euro = 1.0;
+        double converted = euro * dollar;
+        return converted;
+    } // close method
+    public static double BritishPToUsD(){
+        double dollar = 1.29597;
+        double britishpound = 1.0;
+        double converted = britishpound * dollar;
+        return converted;
+    } // close method
+    public static double IndianRToUsD(){
+        double dollar = 0.0139134;
+        double indianrupee = 1.0;
+        double converted = dollar * indianrupee;
+        return converted;
+    } // close method
+    public static double AustralianDToUsD(){
+        double dollar = 0.661578;
+        double australiandollar = 1.0;
+        double converted = australiandollar * dollar;
+        return converted;
+    } // close method
+    public static double CanadianDToUsD(){
+        double dollar = 0.754442;
+        double canadiandollar = 1.0;
+        double converted = canadiandollar * dollar;
+        return converted;
+    } // close method 
+    public static double ChineseYuanRToUsDollar(){
+        double dollar = 0.142313;
+        double chineseyuanrenminbi = 1.0;
+        double converted = chineseyuanrenminbi * dollar;
+        return converted;
+    } // close method 
+    public static double MexicanPToUsD(){
+        double dollar = 0.0525081;
+        double mexicanpeso = 1.0;
+        double converted = mexicanpeso * dollar;
+        return converted;
+    } // close method 
+    public static double EmiratiDToUsD(){
+        double dollar = 0.272294;
+        double emiratidirham = 1.0;
+        double converted = emiratidirham * dollar;
+        return converted;
+    }
+    public static double JapaneseYToUsD(){
+        double dollar = 0.00896095;
+        double japaneseyen = 1.0;
+        double converted = japaneseyen * dollar;
+        return converted;
+    } // close method 
+    public static double PolishZToNewZelandD(){
+        double newzelanddollar = 0.398952;
+        double polishzloty = 1.0;
+        double converted = polishzloty * newzelanddollar;
+        return converted;
+    } // close method 
+} // close class
